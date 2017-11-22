@@ -2,7 +2,7 @@
 
 *screeps-spawn* is a simple spawn manager for [Screeps](http://www.screeps.com).
 
-**Documentation** can be found [HERE](./dist/docs/globals.html)
+**Documentation** can be found [HERE](https://trebbettes-screeps.github.io/screeps-spawn/)
 
 Features:
 - Spawn Timers

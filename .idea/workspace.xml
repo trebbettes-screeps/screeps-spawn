@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/typings/screeps.d.ts" afterPath="$PROJECT_DIR$/src/typings/screeps.d.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/typings/spawn.d.ts" afterPath="$PROJECT_DIR$/src/typings/module.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/spawn.js" afterPath="$PROJECT_DIR$/dist/spawn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generateBody.ts" afterPath="$PROJECT_DIR$/src/generateBody.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spawnManagers.ts" afterPath="$PROJECT_DIR$/src/spawnManagers.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spawnTimers.ts" afterPath="$PROJECT_DIR$/src/spawnTimers.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +20,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="180">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -60,59 +51,30 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <first_editor relative-caret-position="368">
+                <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
                 <folding>
-                  <marker date="1511383788373" expanded="true" signature="1923:2330" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="1923:2360" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="2019:2254" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511383788373" expanded="true" signature="2137:2248" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-                  <marker date="1511383788373" expanded="true" signature="2503:3078" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="2606:2998" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="2812:2990" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="2997:2998" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511383788373" expanded="true" signature="3198:3472" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="3351:3468" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="3578:3810" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="3741:3806" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="3948:4594" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="4051:4509" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="4214:4503" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="4294:4493" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="4635:5263" ph="{...}" />
-                  <marker date="1511383788373" expanded="true" signature="5100:5260" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="1950:2357" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="1950:2387" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="2046:2281" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511384689470" expanded="true" signature="2164:2275" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+                  <marker date="1511384689470" expanded="true" signature="2530:3105" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="2633:3025" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="2839:3017" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="3024:3025" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511384689470" expanded="true" signature="3225:3499" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="3378:3495" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="3605:3837" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="3768:3833" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="3975:4621" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="4078:4536" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="4241:4530" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="4321:4520" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="4662:5290" ph="{...}" />
+                  <marker date="1511384689470" expanded="true" signature="5127:5287" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/docs/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1511383985213" expanded="true" signature="14109:14123" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14109:14133" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14109:14143" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14109:14152" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14109:14160" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14109:14167" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14203:18587" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14228:18577" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14279:18569" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14306:14965" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="14992:15383" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="15410:16084" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="16111:16858" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="16885:17424" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="17451:17852" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="17879:18268" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="18295:18560" ph="..." />
-                <marker date="1511383985213" expanded="true" signature="18625:18714" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -189,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/spawnTimers.ts" />
         <option value="$PROJECT_DIR$/src/spawnManagers.ts" />
         <option value="$PROJECT_DIR$/src/generateBody.ts" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -243,23 +205,6 @@
               <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="typings" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -310,16 +255,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511367228413</updated>
-      <workItem from="1511367230088" duration="6279000" />
+      <workItem from="1511367230088" duration="6537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6279000" />
+    <option name="totallyTimeSpent" value="6537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1389" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -330,7 +274,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -372,26 +316,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1511383985213" expanded="true" signature="14109:14123" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14109:14133" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14109:14143" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14109:14152" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14109:14160" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14109:14167" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14203:18587" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14228:18577" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14279:18569" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14306:14965" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="14992:15383" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="15410:16084" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="16111:16858" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="16885:17424" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="17451:17852" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="17879:18268" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="18295:18560" ph="..." />
-            <marker date="1511383985213" expanded="true" signature="18625:18714" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -445,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="180">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -454,27 +379,27 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <first_editor relative-caret-position="368">
+            <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
             <folding>
-              <marker date="1511383788373" expanded="true" signature="1923:2330" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="1923:2360" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="2019:2254" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511383788373" expanded="true" signature="2137:2248" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-              <marker date="1511383788373" expanded="true" signature="2503:3078" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="2606:2998" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="2812:2990" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="2997:2998" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511383788373" expanded="true" signature="3198:3472" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="3351:3468" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="3578:3810" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="3741:3806" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="3948:4594" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="4051:4509" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="4214:4503" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="4294:4493" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="4635:5263" ph="{...}" />
-              <marker date="1511383788373" expanded="true" signature="5100:5260" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="1950:2357" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="1950:2387" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="2046:2281" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511384689470" expanded="true" signature="2164:2275" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+              <marker date="1511384689470" expanded="true" signature="2530:3105" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="2633:3025" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="2839:3017" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="3024:3025" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511384689470" expanded="true" signature="3225:3499" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="3378:3495" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="3605:3837" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="3768:3833" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="3975:4621" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="4078:4536" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="4241:4530" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="4321:4520" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="4662:5290" ph="{...}" />
+              <marker date="1511384689470" expanded="true" signature="5127:5287" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />

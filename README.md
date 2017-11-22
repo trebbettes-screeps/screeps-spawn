@@ -2,6 +2,8 @@
 
 *screeps-spawn* is a simple spawn manager for [Screeps](http://www.screeps.com).
 
+Special thanks to some members of SUN!
+
 **Documentation** can be found [HERE](https://trebbettes-screeps.github.io/screeps-spawn/)
 
 Features:

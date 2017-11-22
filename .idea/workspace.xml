@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="" />
+    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -48,27 +50,27 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="368">
-                <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+              <first_editor relative-caret-position="-129">
+                <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
                 <folding>
-                  <marker date="1511384689470" expanded="true" signature="1950:2357" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="1950:2387" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="2046:2281" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511384689470" expanded="true" signature="2164:2275" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-                  <marker date="1511384689470" expanded="true" signature="2530:3105" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="2633:3025" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="2839:3017" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="3024:3025" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511384689470" expanded="true" signature="3225:3499" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="3378:3495" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="3605:3837" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="3768:3833" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="3975:4621" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="4078:4536" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="4241:4530" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="4321:4520" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="4662:5290" ph="{...}" />
-                  <marker date="1511384689470" expanded="true" signature="5127:5287" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="1945:2352" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="1945:2382" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="2041:2276" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511385078487" expanded="true" signature="2159:2270" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+                  <marker date="1511385078487" expanded="true" signature="2520:3095" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="2623:3015" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="2829:3007" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="3014:3015" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511385078487" expanded="true" signature="3215:3489" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="3368:3485" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="3595:3827" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="3758:3823" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="3960:4606" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="4063:4521" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="4226:4515" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="4306:4505" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="4647:5275" ph="{...}" />
+                  <marker date="1511385078487" expanded="true" signature="5112:5272" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -122,10 +124,10 @@
             <state relative-caret-position="3000">
               <caret line="200" column="32" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="32" />
               <folding>
-                <marker date="1511384947677" expanded="true" signature="2485:2611" ph="{...}" />
-                <marker date="1511384947677" expanded="true" signature="10597:10694" ph="{...}" />
-                <marker date="1511384947677" expanded="true" signature="10597:10747" ph="{...}" />
-                <marker date="1511384947677" expanded="true" signature="10629:10657" ph="{...}" />
+                <marker date="1511385084400" expanded="true" signature="2485:2611" ph="{...}" />
+                <marker date="1511385084400" expanded="true" signature="10597:10694" ph="{...}" />
+                <marker date="1511385084400" expanded="true" signature="10597:10747" ph="{...}" />
+                <marker date="1511385084400" expanded="true" signature="10629:10657" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -257,12 +259,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511367228413</updated>
-      <workItem from="1511367230088" duration="6778000" />
+      <workItem from="1511367230088" duration="6912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6778000" />
+    <option name="totallyTimeSpent" value="6912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1389" height="878" extended-state="6" />
@@ -311,10 +313,10 @@
         <state relative-caret-position="3000">
           <caret line="200" column="32" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="32" />
           <folding>
-            <marker date="1511384947677" expanded="true" signature="2485:2611" ph="{...}" />
-            <marker date="1511384947677" expanded="true" signature="10597:10694" ph="{...}" />
-            <marker date="1511384947677" expanded="true" signature="10597:10747" ph="{...}" />
-            <marker date="1511384947677" expanded="true" signature="10629:10657" ph="{...}" />
+            <marker date="1511385084400" expanded="true" signature="2485:2611" ph="{...}" />
+            <marker date="1511385084400" expanded="true" signature="10597:10694" ph="{...}" />
+            <marker date="1511385084400" expanded="true" signature="10597:10747" ph="{...}" />
+            <marker date="1511385084400" expanded="true" signature="10629:10657" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -386,27 +388,27 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="368">
-            <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+          <first_editor relative-caret-position="-129">
+            <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
             <folding>
-              <marker date="1511384689470" expanded="true" signature="1950:2357" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="1950:2387" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="2046:2281" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511384689470" expanded="true" signature="2164:2275" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-              <marker date="1511384689470" expanded="true" signature="2530:3105" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="2633:3025" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="2839:3017" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="3024:3025" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511384689470" expanded="true" signature="3225:3499" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="3378:3495" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="3605:3837" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="3768:3833" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="3975:4621" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="4078:4536" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="4241:4530" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="4321:4520" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="4662:5290" ph="{...}" />
-              <marker date="1511384689470" expanded="true" signature="5127:5287" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="1945:2352" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="1945:2382" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="2041:2276" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511385078487" expanded="true" signature="2159:2270" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+              <marker date="1511385078487" expanded="true" signature="2520:3095" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="2623:3015" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="2829:3007" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="3014:3015" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511385078487" expanded="true" signature="3215:3489" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="3368:3485" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="3595:3827" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="3758:3823" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="3960:4606" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="4063:4521" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="4226:4515" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="4306:4505" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="4647:5275" ph="{...}" />
+              <marker date="1511385078487" expanded="true" signature="5112:5272" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />

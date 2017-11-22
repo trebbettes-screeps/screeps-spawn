@@ -55,7 +55,7 @@ import * as $ from "screeps-spawn";
 > Spawn 1 scout every 1500 ticks.
 
 ```typescript
-// import or require screeps-spawn here.
+const $ = require("screeps-spawn");
  
 function scoutFromRoom(room) {
   const taskId = `${room.name}_scout`; // Unique ID.
@@ -81,7 +81,7 @@ function scout(creep) {...}
 
 ```typescript
 
-// import or require screeps-spawn here.
+const $ = require("screeps-spawn");
  
 function supplyBuilders(room) {
     const taskId = `${room.name}_builders`; // Unique ID.
@@ -131,7 +131,7 @@ $.registerSpawnRequest(taskId, room, {
 > Spawn scaled haulers for a source.
 
 ```typescript
-// import or require screeps-spawn here.
+const $ = require("screeps-spawn");
  
 function sendHaulers(room, source) {
     const taskId = `hauler_${room.name}_${source.id}`;

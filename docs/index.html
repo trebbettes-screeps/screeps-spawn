@@ -96,7 +96,7 @@
 				<blockquote>
 					<p>Spawn 1 scout every 1500 ticks.</p>
 				</blockquote>
-				<pre><code class="lang-typescript"><span class="hljs-comment">// import or require screeps-spawn here.</span>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scoutFromRoom</span>(<span class="hljs-params">room</span>) </span>{
   <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`<span class="hljs-subst">${room.name}</span>_scout`</span>; <span class="hljs-comment">// Unique ID.</span>
@@ -121,7 +121,7 @@
 					<p>Spawn 1 builder every 500 ticks (3 builders).</p>
 				</blockquote>
 				<pre><code class="lang-typescript">
-<span class="hljs-comment">// import or require screeps-spawn here.</span>
+<span class="hljs-keyword">const</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supplyBuilders</span>(<span class="hljs-params">room</span>) </span>{
     <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`<span class="hljs-subst">${room.name}</span>_builders`</span>; <span class="hljs-comment">// Unique ID.</span>
@@ -168,7 +168,7 @@
 				<blockquote>
 					<p>Spawn scaled haulers for a source.</p>
 				</blockquote>
-				<pre><code class="lang-typescript"><span class="hljs-comment">// import or require screeps-spawn here.</span>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendHaulers</span>(<span class="hljs-params">room, source</span>) </span>{
     <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`hauler_<span class="hljs-subst">${room.name}</span>_<span class="hljs-subst">${source.id}</span>`</span>;

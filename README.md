@@ -18,20 +18,20 @@ The configuration object has 3 functions `shouldSpawn`, `canSpawn` and `generate
 
 When you generate a spawn request you can provide an `onSuccess` method that will allow you to set the relevant spawn timers. Or perform over custom actions.
 
-Spawn Priority: is based purely upon the position in which the spawn requests appear within your code.
+Spawn Requests are processed every 3 ticks.
+
+**Spawn Priority:** is based purely upon the position in which the spawn requests appear within your code.
 If a spawn request `shouldSpawn` but it cant `canSpawn` then spawning will be paused until that request is satisfied (or the room is full).
 Spawn requests created first will have a higher priority.
-
-Spawn Requests ar processed every 3 ticks.  
 
 ## Install:
 Install via NPM in your local dev environment `npm install screeps-spawn`.
 
 Or if you are using the screeps client then create a new module called 'screeps-spawn' and 
-copy the contents of this file into it.
+copy the contents of [this](https://github.com/trebbettes-screeps/screeps-spawn/blob/master/dist/spawn.js) file into it.
 
 ## Usage
-Import the module in your `main` file. (At the top outside the loop)
+Import the module whenever you need to use it.
 
 JavaScript: 
 

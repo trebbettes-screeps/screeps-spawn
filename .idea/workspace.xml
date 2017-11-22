@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -122,9 +119,14 @@
       <file leaf-file-name="spawn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/spawn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2970">
-              <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="3000">
+              <caret line="200" column="32" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="32" />
+              <folding>
+                <marker date="1511384947677" expanded="true" signature="2485:2611" ph="{...}" />
+                <marker date="1511384947677" expanded="true" signature="10597:10694" ph="{...}" />
+                <marker date="1511384947677" expanded="true" signature="10597:10747" ph="{...}" />
+                <marker date="1511384947677" expanded="true" signature="10629:10657" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -255,12 +257,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511367228413</updated>
-      <workItem from="1511367230088" duration="6537000" />
+      <workItem from="1511367230088" duration="6778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6537000" />
+    <option name="totallyTimeSpent" value="6778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1389" height="878" extended-state="6" />
@@ -306,9 +308,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/spawn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="3000">
+          <caret line="200" column="32" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="32" />
+          <folding>
+            <marker date="1511384947677" expanded="true" signature="2485:2611" ph="{...}" />
+            <marker date="1511384947677" expanded="true" signature="10597:10694" ph="{...}" />
+            <marker date="1511384947677" expanded="true" signature="10597:10747" ph="{...}" />
+            <marker date="1511384947677" expanded="true" signature="10629:10657" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

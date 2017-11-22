@@ -72,10 +72,12 @@ module.exports =
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const skipSpawn = () => Game.time % 3 !== 0;
+let lastRun = 0;
 function processSpawnRequests() {
-    if (skipSpawn()) {
+    if (skipSpawn() || lastRun === Game.time) {
         return;
     }
+    lastRun = Game.time;
     const spawnSets = _(Game.spawns)
         .filter((spawn) => spawn.isActive() && !spawn.spawning && getManagersFromCache(spawn.room))
         .groupBy((spawn) => spawn.pos.roomName)
@@ -149,8 +151,8 @@ function hasCreeps(id) {
     return getCreepCount(id) > 0;
 }
 exports.hasCreeps = hasCreeps;
-function registerSpawnRequest(id, room, manager) {
-    addManagerToCache(id, room, manager);
+function registerSpawnRequest(id, room, spawnRequest) {
+    addManagerToCache(id, room, spawnRequest);
 }
 exports.registerSpawnRequest = registerSpawnRequest;
 let cache = {
@@ -253,13 +255,13 @@ for (const id in Memory.__spawn) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-function generateBody(room, seg, opts = {}) {
-    const numberOfSegments = segmentsRequired(room, seg, opts);
-    const segments = new Array(numberOfSegments).fill(seg);
-    if (opts.additionalSegment) {
-        segments.push(opts.additionalSegment);
+function generateBody(room, segment, options = {}) {
+    const numberOfSegments = segmentsRequired(room, segment, options);
+    const segments = new Array(numberOfSegments).fill(segment);
+    if (options.additionalSegment) {
+        segments.push(options.additionalSegment);
     }
-    const sortOrder = opts.sortOrder || { [TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: opts.moveShield ? 2 : 5 };
+    const sortOrder = options.sortOrder || { [TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: options.moveShield ? 2 : 5 };
     return _.sortBy(_.flatten(segments), (part) => sortOrder[part] || sortOrder.other || 99);
 }
 exports.generateBody = generateBody;
@@ -289,19 +291,19 @@ function getPartCost(type) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-function setTimerCycle(id, cycleModifier = 1) {
-    Memory.__spawn[id] = Memory.__spawn[id] || { lastSpawn: 0 };
+function setTimerCycle(spawnId, cycleModifier = 1) {
+    Memory.__spawn[spawnId] = Memory.__spawn[spawnId] || { lastSpawn: 0 };
     const ticksTillNextSpawn = Math.floor(CREEP_LIFE_TIME / cycleModifier);
-    Memory.__spawn[id].timer = Game.time + ticksTillNextSpawn;
+    Memory.__spawn[spawnId].timer = Game.time + ticksTillNextSpawn;
 }
 exports.setTimerCycle = setTimerCycle;
-function setTimer(id, ticks) {
-    Memory.__spawn[id] = Memory.__spawn[id] || { lastSpawn: 0 };
-    Memory.__spawn[id].timer = Game.time + ticks;
+function setTimer(spawnId, ticks) {
+    Memory.__spawn[spawnId] = Memory.__spawn[spawnId] || { lastSpawn: 0 };
+    Memory.__spawn[spawnId].timer = Game.time + ticks;
 }
 exports.setTimer = setTimer;
-function spawnTimerCheck(id) {
-    const mem = Memory.__spawn[id];
+function spawnTimerCheck(spawnId) {
+    const mem = Memory.__spawn[spawnId];
     if (!mem || !mem.timer) {
         return true;
     }

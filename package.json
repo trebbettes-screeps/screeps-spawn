@@ -1,0 +1,23 @@
+{
+  "name": "screeps-spawn",
+  "version": "1.0.76",
+  "description": "",
+  "main": "./dist/spawn.js",
+  "types": "./typings/spawn.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "trebbettes",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^3.10.1",
+    "@types/node": "^8.0.51",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "console-browserify": "^1.1.0"
+  }
+}

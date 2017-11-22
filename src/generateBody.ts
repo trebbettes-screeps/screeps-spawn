@@ -1,11 +1,27 @@
-export function generateBody(room: Room, seg: string[], opts: GenerateBodyOptions = {}): string[] {
-    const numberOfSegments = segmentsRequired(room, seg, opts);
-    const segments = new Array(numberOfSegments).fill(seg);
-    if (opts.additionalSegment) {
-        segments.push(opts.additionalSegment);
+/**
+ * Generate a body given a room to spawn from and a segment to repeat.
+ * By default it generate as big a creep as it can. Set `maxCost` and `maxSize` options to configure this.
+ * ```typescript
+ * interface GenerateBodyOptions {
+ *  maxCost?: number;
+ *  maxSize?: number;
+ *  moveShield?: boolean;           // Place move parts at the front.
+ *  additionalSegment?: string[];   // An additional not repeated segment.
+ *  sortOrder?: {                   // Override the default sorting
+ *      [partConstant: string]: number;
+ *      other: number;
+ *  };
+ * }
+ * ```
+ */
+export function generateBody(room: Room, segment: string[], options: GenerateBodyOptions = {}): string[] {
+    const numberOfSegments = segmentsRequired(room, segment, options);
+    const segments = new Array(numberOfSegments).fill(segment);
+    if (options.additionalSegment) {
+        segments.push(options.additionalSegment);
     }
     const sortOrder: {[part: string]: number} =
-        opts.sortOrder || {[TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: opts.moveShield ? 2 : 5};
+        options.sortOrder || {[TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: options.moveShield ? 2 : 5};
     return _.sortBy(_.flatten(segments), (part: string) => sortOrder[part] || sortOrder.other || 99);
 }
 

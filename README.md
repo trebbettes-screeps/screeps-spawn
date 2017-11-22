@@ -2,28 +2,27 @@
 
 *screeps-spawn* is a simple spawn manager for [Screeps](http://www.screeps.com).
 
-It comes with a creep body generator and a number of tools to manage spawning and access to creep sets.
+**Documentation** can be found [HERE](./dist/docs/globals.html)
 
-- Spawn Timer
-- Cycle Timer 
+Features:
+- Spawn Timers
 - Body Generator
-- Creep Access
+- Easy creep access.
 
-For each spawn request you must provide a uniqueId, a room to spawn from and a configuration object.
+How it works:
 
-The configuration object has 3 methods: `shouldSpawn`, `canSpawn` and `generateSpawnRequest`.
+For each `spawn request` you must provide a uniqueId, a room to spawn from and a configuration object.
+The configuration object has 3 functions `shouldSpawn`, `canSpawn` and `generateSpawnRequest` that control the flow of the spawns.
 
-Spawn Priority: is based purley upon the position in which the spawn requests appear within your code.
+`shouldSpawn` and `canSpawn` should be as light as possible and any CPU intensive code should be in `generateSpawnRequest`.
+
+When you generate a spawn request you can provide an `onSuccess` method that will allow you to set the relevant spawn timers. Or perform over custom actions.
+
+Spawn Priority: is based purely upon the position in which the spawn requests appear within your code.
+If a spawn request `shouldSpawn` but it cant `canSpawn` then spawning will be paused until that request is satisfied (or the room is full).
 Spawn requests created first will have a higher priority.
 
-Every 3 ticks the spawnRequests are evaluated for each spawn room:  
-
-1. Find the first spawn request which `shouldSpawn()`.
-2. If `canSpawn()` then `generateSpawnRequest()` will be called.
-
-Because of this, your logic inside `shouldSpawn` should be as light as possible.
-As this is potentially called every 3 ticks. 
-You can make use of the timers and helper functions to achieve this as demonstrated below.
+Spawn Requests ar processed every 3 ticks.  
 
 ## Install:
 Install via NPM in your local dev environment `npm install screeps-spawn`.
@@ -52,73 +51,10 @@ import * as $ from "screeps-spawn";
 
 
 
-## Methods:
-
-
-```
-// Register Spawn Requests.
-$.registerSpawnRequest(id, room, config);
- 
-// Generate Bodies
-$.generateBody(room, segment, options?);
- 
-// Creep Access 
-$.getCreepCount(id);
-$.getCreeps(id);
-$.hasCreeps(id);
- 
-// Timers
-$.setTimer(id, ticksFromNow);
-$.setTimerCycle(id, numberOfCreeps);
-$.spawnTimerCheck(id);
- 
-// Process all spawn requests.
-$.processSpawnRequests();
-```
-
-#### getCreeps(id, includeSpawning?)
-> By default this will exclude spawning creeps.
-
-- id: The spawn request id.
-- includeSpawning: Optional - Default `false`.
-
-
-#### generateBody(room, segment, options?)
-- room: The room to spawn from.
-- segment: An array of body part constants to repeat.
-- options: Object 
-```
-const optionsExample = {
-    maxCost: 2000,                      // The maximum ammount of spawn energy to use.
-    maxSize: 20,                        // The maximum number of body parts to spawn.
-    moveShield: true,                   // Position MOVE parts at the front of the creep. (used with default sort)
-    additionalSegment: [WORK, MOVE],    // An additional segment that gets added once to the body.
-    sortOrder?: {                       // A custom sort object. 'other' is used for parts not specified.
-        [WORK]: 1,
-        other: 2,
-        [CARRY]: 3
-    },
-}
-```
-
-#### setTimerCycle(id, numberCreeps?)
-Sets timer to `CREEP_LIFE_TIME / numberOfCreeps`
-
-- id: The spawnRequest id.
-- numberCreeps: Optional - The number of creeps to spawn (default 1).
-
-#### setTimer(id, ticksFromNow)
-Sets timer to `Game.time + ticksFromNow`
-
-- id: The spawnRequest id.
-- ticksFromNow: The number of ticks in the future to set the spawn timer to.
-
-#### registerSpawnRequest(id, room, config)
-Register a spawn request to be managed.
 ##### Examples:
-> Spawn a scout every 1500 ticks.
+> Spawn 1 scout every 1500 ticks.
 
-```ecmascript 6
+```typescript
 // import or require screeps-spawn here.
  
 function scoutFromRoom(room) {
@@ -129,7 +65,7 @@ function scoutFromRoom(room) {
     canSpawn: () => room.energyAvailable > 50,
     generateSpawnRequest: () => ({
       body: $.generateBody(room, [MOVE], {maxSize: 1}),
-      onSuccess: $.setTimerCycle, // Defaults to 1 creep
+      onSuccess: () => $.setTimerCycle(taskId),
     }),
   });
  
@@ -141,19 +77,35 @@ function scoutFromRoom(room) {
 function scout(creep) {...}
 ```
 
-> Spawn 3 builder creeps on an immediate spawn.  
-```ecmascript 6
-$.registerSpawnRequest(taskId, room, {
-    shouldSpawn: () => $.getCreepCount(taskId) < 3,
-    canSpawn: () => room.energyAvailable > 2000 || room.energyAvailable === room.energyCapacityAvailable,
-    generateSpawnRequest: () => ({
-        body: $.generateBody(room, [MOVE, WORK, CARRY], {maxCost: room.energyAvailable}), 
-    }),
-});
+> Spawn 1 builder every 500 ticks (3 builders).
+
+```typescript
+
+// import or require screeps-spawn here.
+ 
+function supplyBuilders(room) {
+    const taskId = `${room.name}_builders`; // Unique ID.
+ 
+    $.registerSpawnRequest(taskId, room, {
+        shouldSpawn: () => $.getCreepCount(taskId) < 3,
+        canSpawn: () => room.energyAvailable >= 2000 || room.energyAvailable === room.energyCapacityAvailable,
+        generateSpawnRequest: () => ({
+            body: $.generateBody(room, [MOVE, WORK, CARRY], {maxCost: Math.min(room.energyAvailable, 2000)}),
+            onSuccess: () => $.setTimerCycle(taskId, 3) 
+        }),
+    });
+ 
+    const creeps = $.getCreeps(taskId);
+   
+    _.forEach(creeps, build);
+}
+ 
+function build(creep) {...}
 ```
 
 > One Creep every 10,000 ticks.
-```ecmascript 6
+
+```typescript
 $.registerSpawnRequest(taskId, room, {
     shouldSpawn: () => $.spawnTimerCheck, 
     canSpawn: () => room.energyAvailable === room.energyCapacityAvailable,
@@ -164,9 +116,21 @@ $.registerSpawnRequest(taskId, room, {
 });
 ```
 
+> Always 3 Creeps (immediate spawn on death).
+
+```typescript
+$.registerSpawnRequest(taskId, room, {
+    shouldSpawn: () => $.getCreepCount(taskId) < 3, 
+    canSpawn: () => room.energyAvailable === room.energyCapacityAvailable,
+    generateSpawnRequest: () => ({
+        body: $.generateBody(room, [MOVE, WORK, CARRY]), 
+    }),
+});
+```
+
 > Spawn scaled haulers for a source.
 
-```ecmascript 6
+```typescript
 // import or require screeps-spawn here.
  
 function sendHaulers(room, source) {
@@ -175,21 +139,18 @@ function sendHaulers(room, source) {
     $.registerSpawnRequest(taskId, room, {
         shouldSpawn: () => $.spawnTimerCheck,
         canSpawn: () => room.energyCapacityAvailable === room.energyAvailable,
-        generateSpawnRequest: () => generateSpawnRequest(taskId, room, source),
+        generateSpawnRequest: () => {
+            const analysis = haulerAnalysis(room, source);
+            return {
+                body: $.generateBody(room, [CARRY, CARRY, MOVE], {maxCost: analysis.maxCostPerCreep}),
+                onSuccess: () => $.setTimerCycle(taskId, analysis.targetCreeps),
+            }
+        }
     });
     
     const haulers = $.getCreeps(taskId);
     
     _.forEach(haulers, haul);
-}
- 
-function generateSpawnRequest(taskId, room, source) {
-    const analysis = haulerAnalysis(room, source);
-    
-    return {
-        body: $.generateBody(room, [CARRY, CARRY, MOVE], {maxCost: analysis.maxCostPerCreep}),
-        onSuccess: () => $.setTimerCycle(taskId, analysis.targetCreeps),
-    };
 }
  
 function haulerAnalysis(room, source) {

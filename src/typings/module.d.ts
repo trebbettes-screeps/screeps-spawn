@@ -3,14 +3,14 @@ declare module "screeps-spawn" {
     function getCreeps(id: string, includeSpawning?: boolean): Creep[];
     function getCreepCount(id: string): number;
     function hasCreeps(id: string): boolean;
-    function registerSpawnRequest(id: string, room: Room, spawnRequest: SpawnRequestor): void;
+    function registerSpawnRequest(id: string, room: Room, spawnRequest: SpawnRequester): void;
     function setTimerCycle(id: string, cycleModifier?: number): void;
     function setTimer(id: string, ticks: number): void;
     function spawnTimerCheck(id: string): boolean;
     function processSpawnRequests(): void;
 }
 
-interface SpawnRequestor {
+interface SpawnRequester {
     canSpawn: (id: string, room: Room) => boolean;
     generateSpawnRequest: (id: string, room: Room) => SpawnRequest;
     shouldSpawn: (id: string, room: Room) => boolean;
@@ -30,9 +30,12 @@ interface SpawnRequest {
     body: string[];
     memory?: any;
     name?: string;
-    onSuccess?: (name: string) => void;
+    onSuccess?: (id: string, name: string) => void;
 }
 
+/**
+ * Options for the body generator.
+ */
 interface GenerateBodyOptions {
     maxCost?: number;
     maxSize?: number;

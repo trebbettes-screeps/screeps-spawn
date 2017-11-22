@@ -1,0 +1,318 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>screeps-spawn</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">screeps-spawn</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> screeps-spawn</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="screeps-spawn">Screeps Spawn</h1>
+				<p><em>screeps-spawn</em> is a simple spawn manager for <a href="http://www.screeps.com">Screeps</a>.</p>
+				<p><strong>Documentation</strong> can be found <a href="./dist/docs/globals.html">HERE</a></p>
+				<p>Features:</p>
+				<ul>
+					<li>Spawn Timers</li>
+					<li>Body Generator</li>
+					<li>Easy creep access.</li>
+				</ul>
+				<p>How it works:</p>
+				<p>For each <code>spawn request</code> you must provide a uniqueId, a room to spawn from and a configuration object.
+				The configuration object has 3 functions <code>shouldSpawn</code>, <code>canSpawn</code> and <code>generateSpawnRequest</code> that control the flow of the spawns.</p>
+				<p><code>shouldSpawn</code> and <code>canSpawn</code> should be as light as possible and any CPU intensive code should be in <code>generateSpawnRequest</code>.</p>
+				<p>When you generate a spawn request you can provide an <code>onSuccess</code> method that will allow you to set the relevant spawn timers. Or perform over custom actions.</p>
+				<p>Spawn Priority: is based purely upon the position in which the spawn requests appear within your code.
+					If a spawn request <code>shouldSpawn</code> but it cant <code>canSpawn</code> then spawning will be paused until that request is satisfied (or the room is full).
+				Spawn requests created first will have a higher priority.</p>
+				<p>Spawn Requests ar processed every 3 ticks.  </p>
+				<h2 id="install-">Install:</h2>
+				<p>Install via NPM in your local dev environment <code>npm install screeps-spawn</code>.</p>
+				<p>Or if you are using the screeps client then create a new module called &#39;screeps-spawn&#39; and
+				copy the contents of this file into it.</p>
+				<h2 id="usage">Usage</h2>
+				<p>Import the module in your <code>main</code> file. (At the top outside the loop)</p>
+				<p>JavaScript: </p>
+				<pre><code>const $ = <span class="hljs-keyword">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
+</code></pre><p>TypeScript: </p>
+				<pre><code><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">"screeps-spawn"</span>;
+</code></pre><blockquote>
+					<p>You can rename the module to anything you like if you dont want to use <code>$</code>;</p>
+					<p>At the bottom of your main loop you will need to call <code>$.processSpawnRequests()</code>. It is <strong>important</strong> that this is called after all your spawn requests have been generated.</p>
+				</blockquote>
+				<h5 id="examples-">Examples:</h5>
+				<blockquote>
+					<p>Spawn 1 scout every 1500 ticks.</p>
+				</blockquote>
+				<pre><code class="lang-typescript"><span class="hljs-comment">// import or require screeps-spawn here.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scoutFromRoom</span>(<span class="hljs-params">room</span>) </span>{
+  <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`<span class="hljs-subst">${room.name}</span>_scout`</span>; <span class="hljs-comment">// Unique ID.</span>
+
+  $.registerSpawnRequest(taskId, room, {
+    shouldSpawn: $.spawnTimerCheck,
+    canSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> room.energyAvailable &gt; <span class="hljs-number">50</span>,
+    generateSpawnRequest: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({
+      body: $.generateBody(room, [MOVE], {maxSize: <span class="hljs-number">1</span>}),
+      onSuccess: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.setTimerCycle(taskId),
+    }),
+  });
+
+  <span class="hljs-keyword">const</span> creeps = $.getCreeps(taskId);
+
+  _.forEach(creeps, scout);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scout</span>(<span class="hljs-params">creep</span>) </span>{...}
+</code></pre>
+				<blockquote>
+					<p>Spawn 1 builder every 500 ticks (3 builders).</p>
+				</blockquote>
+				<pre><code class="lang-typescript">
+<span class="hljs-comment">// import or require screeps-spawn here.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supplyBuilders</span>(<span class="hljs-params">room</span>) </span>{
+    <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`<span class="hljs-subst">${room.name}</span>_builders`</span>; <span class="hljs-comment">// Unique ID.</span>
+
+    $.registerSpawnRequest(taskId, room, {
+        shouldSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.getCreepCount(taskId) &lt; <span class="hljs-number">3</span>,
+        canSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> room.energyAvailable &gt;= <span class="hljs-number">2000</span> || room.energyAvailable === room.energyCapacityAvailable,
+        generateSpawnRequest: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({
+            body: $.generateBody(room, [MOVE, WORK, CARRY], {maxCost: <span class="hljs-built_in">Math</span>.min(room.energyAvailable, <span class="hljs-number">2000</span>)}),
+            onSuccess: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.setTimerCycle(taskId, <span class="hljs-number">3</span>) 
+        }),
+    });
+
+    <span class="hljs-keyword">const</span> creeps = $.getCreeps(taskId);
+
+    _.forEach(creeps, build);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span>(<span class="hljs-params">creep</span>) </span>{...}
+</code></pre>
+				<blockquote>
+					<p>One Creep every 10,000 ticks.</p>
+				</blockquote>
+				<pre><code class="lang-typescript">$.registerSpawnRequest(taskId, room, {
+    shouldSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.spawnTimerCheck, 
+    canSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> room.energyAvailable === room.energyCapacityAvailable,
+    generateSpawnRequest: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({
+        body: $.generateBody(room, [MOVE, WORK, CARRY]), 
+        onSuccess: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.setTimer(taskId, <span class="hljs-number">10000</span>),
+    }),
+});
+</code></pre>
+				<blockquote>
+					<p>Always 3 Creeps (immediate spawn on death).</p>
+				</blockquote>
+				<pre><code class="lang-typescript">$.registerSpawnRequest(taskId, room, {
+    shouldSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.getCreepCount(taskId) &lt; <span class="hljs-number">3</span>, 
+    canSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> room.energyAvailable === room.energyCapacityAvailable,
+    generateSpawnRequest: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({
+        body: $.generateBody(room, [MOVE, WORK, CARRY]), 
+    }),
+});
+</code></pre>
+				<blockquote>
+					<p>Spawn scaled haulers for a source.</p>
+				</blockquote>
+				<pre><code class="lang-typescript"><span class="hljs-comment">// import or require screeps-spawn here.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendHaulers</span>(<span class="hljs-params">room, source</span>) </span>{
+    <span class="hljs-keyword">const</span> taskId = <span class="hljs-string">`hauler_<span class="hljs-subst">${room.name}</span>_<span class="hljs-subst">${source.id}</span>`</span>;
+
+    $.registerSpawnRequest(taskId, room, {
+        shouldSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.spawnTimerCheck,
+        canSpawn: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> room.energyCapacityAvailable === room.energyAvailable,
+        generateSpawnRequest: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> analysis = haulerAnalysis(room, source);
+            <span class="hljs-keyword">return</span> {
+                body: $.generateBody(room, [CARRY, CARRY, MOVE], {maxCost: analysis.maxCostPerCreep}),
+                onSuccess: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> $.setTimerCycle(taskId, analysis.targetCreeps),
+            }
+        }
+    });
+
+    <span class="hljs-keyword">const</span> haulers = $.getCreeps(taskId);
+
+    _.forEach(haulers, haul);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">haulerAnalysis</span>(<span class="hljs-params">room, source</span>) </span>{
+    <span class="hljs-keyword">const</span> pathLength = room.storage ? PathFinder.search(room.storage.pos, {pos: source.pos, range: <span class="hljs-number">1</span>}).path.length : <span class="hljs-number">25</span>;
+    <span class="hljs-keyword">const</span> carryPartsRequired = <span class="hljs-built_in">Math</span>.ceil(source.energyCapacity / <span class="hljs-number">300</span> * pathLength * <span class="hljs-number">2</span> / <span class="hljs-number">50</span> * <span class="hljs-number">1.2</span>);
+    <span class="hljs-keyword">const</span> maxCarryParts = <span class="hljs-built_in">Math</span>.floor(room.energyCapacityAvailable / BODYPART_COST[CARRY] * <span class="hljs-number">0.666</span>);
+    <span class="hljs-keyword">const</span> ratio = carryPartsRequired / maxCarryParts;
+    <span class="hljs-keyword">const</span> energyModifier = ratio &lt;= <span class="hljs-number">1</span> ? ratio : ratio / <span class="hljs-built_in">Math</span>.ceil(ratio);
+
+    <span class="hljs-keyword">return</span> {
+        targetCreeps: ratio &lt;= <span class="hljs-number">1</span> ? <span class="hljs-number">1</span> : <span class="hljs-built_in">Math</span>.min(<span class="hljs-built_in">Math</span>.ceil(ratio), <span class="hljs-number">5</span>),
+        maxCostPerCreep: <span class="hljs-built_in">Math</span>.ceil(room.energyCapacityAvailable * energyModifier),
+    };
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">haul</span>(<span class="hljs-params">creep</span>) </span>{...}
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatebody" class="tsd-kind-icon">generate<wbr>Body</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getcreepcount" class="tsd-kind-icon">get<wbr>Creep<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getcreeps" class="tsd-kind-icon">get<wbr>Creeps</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#hascreeps" class="tsd-kind-icon">has<wbr>Creeps</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#processspawnrequests" class="tsd-kind-icon">process<wbr>Spawn<wbr>Requests</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#registerspawnrequest" class="tsd-kind-icon">register<wbr>Spawn<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#settimer" class="tsd-kind-icon">set<wbr>Timer</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#settimercycle" class="tsd-kind-icon">set<wbr>Timer<wbr>Cycle</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#spawntimercheck" class="tsd-kind-icon">spawn<wbr>Timer<wbr>Check</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

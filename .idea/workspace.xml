@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="" />
+    <list default="true" id="4fa8b1e9-a91d-49a6-8f75-e420d7696933" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/typings/screeps.d.ts" afterPath="$PROJECT_DIR$/src/typings/screeps.d.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/typings/spawn.d.ts" afterPath="$PROJECT_DIR$/src/typings/module.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/spawn.js" afterPath="$PROJECT_DIR$/dist/spawn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generateBody.ts" afterPath="$PROJECT_DIR$/src/generateBody.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spawnManagers.ts" afterPath="$PROJECT_DIR$/src/spawnManagers.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/spawnTimers.ts" afterPath="$PROJECT_DIR$/src/spawnTimers.ts" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,6 +29,97 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spawnManagers.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spawnManagers.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="111" column="16" lean-forward="false" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generateBody.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/generateBody.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+                <folding>
+                  <marker date="1511383788373" expanded="true" signature="1923:2330" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="1923:2360" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="2019:2254" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511383788373" expanded="true" signature="2137:2248" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+                  <marker date="1511383788373" expanded="true" signature="2503:3078" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="2606:2998" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="2812:2990" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="2997:2998" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511383788373" expanded="true" signature="3198:3472" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="3351:3468" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="3578:3810" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="3741:3806" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="3948:4594" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="4051:4509" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="4214:4503" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="4294:4493" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="4635:5263" ph="{...}" />
+                  <marker date="1511383788373" expanded="true" signature="5100:5260" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/docs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1511383985213" expanded="true" signature="14109:14123" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14109:14133" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14109:14143" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14109:14152" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14109:14160" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14109:14167" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14203:18587" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14228:18577" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14279:18569" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14306:14965" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="14992:15383" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="15410:16084" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="16111:16858" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="16885:17424" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="17451:17852" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="17879:18268" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="18295:18560" ph="..." />
+                <marker date="1511383985213" expanded="true" signature="18625:18714" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
@@ -24,17 +127,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="init.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/init.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/typings/module.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spawnTimers.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/spawnTimers.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spawn.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/spawn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2970">
+              <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>id</find>
+      <find>onSucc</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,12 +182,28 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/typings/spawn.d.ts" />
+        <option value="$PROJECT_DIR$/dist/spawn.js" />
+        <option value="$PROJECT_DIR$/dist/docs/index.html" />
+        <option value="$PROJECT_DIR$/src/typings/module.d.ts" />
+        <option value="$PROJECT_DIR$/src/spawnTimers.ts" />
+        <option value="$PROJECT_DIR$/src/spawnManagers.ts" />
+        <option value="$PROJECT_DIR$/src/generateBody.ts" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
     <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -83,6 +238,28 @@
               <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
               <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="screeps-spawn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="screeps-spawn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="typings" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -95,6 +272,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/typings" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/typings" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,32 +310,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511367228413</updated>
-      <workItem from="1511367230088" duration="36000" />
+      <workItem from="1511367230088" duration="6279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36000" />
+    <option name="totallyTimeSpent" value="6279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1389" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -159,7 +352,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/spawn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="198" column="32" lean-forward="false" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511383985213" expanded="true" signature="14109:14123" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14109:14133" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14109:14143" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14109:14152" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14109:14160" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14109:14167" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14203:18587" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14228:18577" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14279:18569" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14306:14965" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="14992:15383" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="15410:16084" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="16111:16858" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="16885:17424" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="17451:17852" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="17879:18268" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="18295:18560" ph="..." />
+            <marker date="1511383985213" expanded="true" signature="18625:18714" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -167,11 +403,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/init.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spawnTimers.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typings/module.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spawnManagers.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="111" column="16" lean-forward="false" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generateBody.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            <folding>
+              <marker date="1511383788373" expanded="true" signature="1923:2330" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="1923:2360" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="2019:2254" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511383788373" expanded="true" signature="2137:2248" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+              <marker date="1511383788373" expanded="true" signature="2503:3078" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="2606:2998" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="2812:2990" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="2997:2998" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511383788373" expanded="true" signature="3198:3472" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="3351:3468" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="3578:3810" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="3741:3806" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="3948:4594" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="4051:4509" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="4214:4503" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="4294:4493" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="4635:5263" ph="{...}" />
+              <marker date="1511383788373" expanded="true" signature="5100:5260" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

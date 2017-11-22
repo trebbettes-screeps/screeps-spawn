@@ -1,9 +1,14 @@
 const skipSpawn = () => Game.time % 3 !== 0;
+let lastRun = 0;
 
+/**
+ * Process all spawn requests. **Must** be called in your code **after** spawn requests have been registered.
+ */
 export function processSpawnRequests(): void {
-    if (skipSpawn()) {
+    if (skipSpawn() || lastRun === Game.time) {
         return;
     }
+    lastRun = Game.time;
 
     const spawnSets = _(Game.spawns)
         .filter((spawn: Spawn) => spawn.isActive() && !spawn.spawning && getManagersFromCache(spawn.room))
@@ -17,14 +22,14 @@ export function processSpawnRequests(): void {
     _.forEach(spawnSets, (set: any) => spawnCycle(set.room, set.spawns, set.managers));
 }
 
-function spawnCycle(room: Room, spawns: Spawn[], managers: {[id: string]: SpawnRequestor}): void {
-    const result = _.find(managers, (mng: SpawnRequestor, id: string) => trySpawnAttempt(id, mng, room, spawns[0]));
+function spawnCycle(room: Room, spawns: Spawn[], managers: {[id: string]: SpawnRequester}): void {
+    const result = _.find(managers, (mng: SpawnRequester, id: string) => trySpawnAttempt(id, mng, room, spawns[0]));
     if (!result) {
         // TODO: log spawn idle time.
     }
 }
 
-function trySpawnAttempt(managerId: string, manager: SpawnRequestor, room: Room, spawn: Spawn): boolean {
+function trySpawnAttempt(managerId: string, manager: SpawnRequester, room: Room, spawn: Spawn): boolean {
     try {
         return spawnAttempt(managerId, manager, room, spawn);
     } catch (e) {
@@ -34,7 +39,7 @@ function trySpawnAttempt(managerId: string, manager: SpawnRequestor, room: Room,
     }
 }
 
-function spawnAttempt(managerId: string, manager: SpawnRequestor, room: Room, spawn: Spawn): boolean {
+function spawnAttempt(managerId: string, manager: SpawnRequester, room: Room, spawn: Spawn): boolean {
     if (!manager.shouldSpawn(managerId, room)) {
         return false;
     }
@@ -50,7 +55,7 @@ function spawnAttempt(managerId: string, manager: SpawnRequestor, room: Room, sp
     const spawnResult = spawn.spawnCreep(request.body, name, {memory});
     if (spawnResult === OK) {
         if (request.onSuccess) {
-            request.onSuccess(name);
+            request.onSuccess(managerId, name);
         }
         registerCreep(managerId, name);
         return true;
@@ -71,21 +76,50 @@ function registerCreep(id: string, name: string): void {
     }
 }
 
+/**
+ * Get the creeps that are assigned to the spawn request.
+ * By default spawning creeps are excluded.
+ */
 export function getCreeps(id: string, includeSpawning: boolean = false): Creep[] {
     const creeps = creepsFromCache(id);
     return includeSpawning ? creeps : _.filter(creeps, (c: Creep) => !c.spawning);
 }
 
+/**
+ * Get the total creep count (including spawning creeps) for a spawn request.
+ */
 export function getCreepCount(id: string): number {
     return creepsFromCache(id).length;
 }
 
+/**
+ * Check if a spawn request has at least one creep spawning or alive.
+ */
 export function hasCreeps(id: string): boolean {
     return getCreepCount(id) > 0;
 }
 
-export function registerSpawnRequest(id: string, room: Room, manager: SpawnRequest): void {
-    addManagerToCache(id, room, manager);
+/**
+ * Register a spawn request.
+ * Requies a unique id, room to spawn from and a SpawnRequester object.
+ * ```typescript
+ * interface SpawnRequester {
+ *  shouldSpawn: () => boolean;
+ *  canSpawn: () => boolean;
+ *  generateSpawnRequest: () => SpawnRequest;
+ * }
+ * ```
+ * ```typescript
+ * interface SpawnRequest {
+ *  body: string[];
+ *  memory?: any;
+ *  name?: string;
+ *  onSuccess?: (id: string, name: string) => void;
+ * }
+ * ```
+ */
+export function registerSpawnRequest(id: string, room: Room, spawnRequest: SpawnRequester): void {
+    addManagerToCache(id, room, spawnRequest);
 }
 
 /*
@@ -94,7 +128,7 @@ export function registerSpawnRequest(id: string, room: Room, manager: SpawnReque
 
 let cache: {
     creeps: { [taskId: string]: Creep[] },
-    managers: { [roomName: string]: { [taskId: string]: SpawnRequest } },
+    managers: { [roomName: string]: { [taskId: string]: SpawnRequester } },
     tickReset: number,
 } = {
     creeps: {},
@@ -128,7 +162,7 @@ function creepsFromNames(names: string[]): Creep[] {
         .filter(_.identity).value();
 }
 
-function addManagerToCache(taskId: string, room: Room, manager: SpawnRequest): void {
+function addManagerToCache(taskId: string, room: Room, manager: SpawnRequester): void {
     checkCache();
     cache.managers[room.name] = cache.managers[room.name] || {};
     if (cache.managers[room.name][taskId]) {
@@ -138,7 +172,7 @@ function addManagerToCache(taskId: string, room: Room, manager: SpawnRequest): v
     cache.managers[room.name][taskId] = manager;
 }
 
-function getManagersFromCache(room: Room): { [taskId: string]: SpawnRequest } | null {
+function getManagersFromCache(room: Room): { [taskId: string]: SpawnRequester } | null {
     return cache.managers[room.name] || null;
 }
 

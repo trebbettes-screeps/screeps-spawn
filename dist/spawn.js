@@ -61,69 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var generateBody_1 = __webpack_require__(1);
-exports.generateBody = generateBody_1.generateBody;
-var spawnManagers_1 = __webpack_require__(2);
-exports.processSpawnRequests = spawnManagers_1.processSpawnRequests;
-exports.registerSpawnRequest = spawnManagers_1.registerSpawnRequest;
-exports.getCreepCount = spawnManagers_1.getCreepCount;
-exports.getCreeps = spawnManagers_1.getCreeps;
-exports.hasCreeps = spawnManagers_1.hasCreeps;
-var spawnTimers_1 = __webpack_require__(3);
-exports.setTimer = spawnTimers_1.setTimer;
-exports.setTimerCycle = spawnTimers_1.setTimerCycle;
-exports.spawnTimerCheck = spawnTimers_1.spawnTimerCheck;
-Memory.__spawn = Memory.__spawn || {};
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-function generateBody(room, seg, opts = {}) {
-    const numberOfSegments = segmentsRequired(room, seg, opts);
-    const segments = new Array(numberOfSegments).fill(seg);
-    if (opts.additionalSegment) {
-        segments.push(opts.additionalSegment);
-    }
-    const sortOrder = opts.sortOrder || { [TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: opts.moveShield ? 2 : 5 };
-    return _.sortBy(_.flatten(segments), (part) => sortOrder[part] || sortOrder.other || 99);
-}
-exports.generateBody = generateBody;
-function segmentsRequired(room, segment, opts) {
-    return Math.min(maxSegmentsByCost(room, segment, opts), maxSegmentsBySize(segment, opts));
-}
-function maxSegmentsByCost(room, segment, opts) {
-    let maxCost = opts.maxCost && opts.maxCost <= room.energyCapacityAvailable ?
-        opts.maxCost : room.energyCapacityAvailable;
-    maxCost = opts.additionalSegment ? maxCost - _.sum(opts.additionalSegment, getPartCost) : maxCost;
-    return Math.floor(maxCost / _.sum(segment, getPartCost));
-}
-function maxSegmentsBySize(segment, opts) {
-    let maxSize = opts.maxSize && opts.maxSize <= MAX_CREEP_SIZE ? opts.maxSize : MAX_CREEP_SIZE;
-    maxSize = opts.additionalSegment ? maxSize - opts.additionalSegment.length : maxSize;
-    return Math.floor((maxSize && maxSize <= 50 ? maxSize : MAX_CREEP_SIZE) / segment.length);
-}
-function getPartCost(type) {
-    return BODYPART_COST[type];
-}
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -155,36 +97,35 @@ function trySpawnAttempt(managerId, manager, room, spawn) {
         return spawnAttempt(managerId, manager, room, spawn);
     }
     catch (e) {
-        console.log(`$ - Unexpected spawn failure: ${room.name} | ${managerId}`);
+        console.log(`screeps-spawn: Unexpected spawn failure: ${room.name} | ${managerId}`);
         console.log(JSON.stringify(e.stack, null, 4));
         return false;
     }
 }
 function spawnAttempt(managerId, manager, room, spawn) {
-    if (manager._hasSpawned || manager.disableSpawn || !manager.shouldSpawn(room)) {
+    if (!manager.shouldSpawn(managerId, room)) {
         return false;
     }
-    if (!manager.canSpawn(room)) {
+    if (!manager.canSpawn(managerId, room)) {
         return room.energyAvailable !== room.energyCapacityAvailable;
     }
-    const request = manager.generateSpawnRequest(room);
+    const request = manager.generateSpawnRequest(managerId, room);
     const name = request.name || `${managerId}_${Math.random().toString(36).slice(2, 6)}`;
     const memory = request.memory || {};
     _.defaults(memory, { origin: room.name });
     const spawnResult = spawn.spawnCreep(request.body, name, { memory });
     if (spawnResult === OK) {
         if (request.onSuccess) {
-            request.onSuccess(name);
+            request.onSuccess(managerId, name);
         }
         registerCreep(managerId, name);
-        manager._hasSpawned = true;
         return true;
     }
-    console.log(`$ - Unexpected spawn failure: ${room.name} | ${managerId} | ${spawnResult}`);
+    console.log(`screeps-spawn: Unexpected spawn failure: ${room.name} | ${managerId} | ${errors[spawnResult]}`);
     return false;
 }
 function registerCreep(id, name) {
-    Memory.__spawn[id] = Memory.__spawn[id] || {};
+    Memory.__spawn[id] = Memory.__spawn[id] || { lastSpawn: 0 };
     const mem = Memory.__spawn[id];
     if (mem.creeps && mem.creeps.length) {
         mem.lastSpawn = Game.time;
@@ -252,6 +193,57 @@ function addManagerToCache(taskId, room, manager) {
 function getManagersFromCache(room) {
     return cache.managers[room.name] || null;
 }
+const errors = {
+    "-1": "ERR_NOT_OWNER",
+    "-10": "ERR_INVALID_ARGS",
+    "-14": "ERR_RCL_NOT_ENOUGH",
+    "-3": "ERR_NAME_EXISTS",
+    "-4": "ERR_BUSY",
+    "-6": "ERR_NOT_ENOUGH_ENERGY",
+    "0": "OK",
+};
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(2);
+var generateBody_1 = __webpack_require__(3);
+exports.generateBody = generateBody_1.generateBody;
+var spawnManagers_1 = __webpack_require__(0);
+exports.processSpawnRequests = spawnManagers_1.processSpawnRequests;
+exports.registerSpawnRequest = spawnManagers_1.registerSpawnRequest;
+exports.getCreepCount = spawnManagers_1.getCreepCount;
+exports.getCreeps = spawnManagers_1.getCreeps;
+exports.hasCreeps = spawnManagers_1.hasCreeps;
+var spawnTimers_1 = __webpack_require__(4);
+exports.setTimer = spawnTimers_1.setTimer;
+exports.setTimerCycle = spawnTimers_1.setTimerCycle;
+exports.spawnTimerCheck = spawnTimers_1.spawnTimerCheck;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const spawnManagers_1 = __webpack_require__(0);
+console.log("screeps-spawn: init");
+Memory.__spawn = Memory.__spawn || {};
+for (const id in Memory.__spawn) {
+    if (Memory.__spawn[id]) {
+        const data = Memory.__spawn[id];
+        if (spawnManagers_1.getCreeps(id, true).length === 0 && (!data.timer || data.timer < Game.time - 1500)) {
+            Memory.__spawn[id] = undefined;
+        }
+    }
+}
 
 
 /***/ }),
@@ -261,14 +253,50 @@ function getManagersFromCache(room) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+function generateBody(room, seg, opts = {}) {
+    const numberOfSegments = segmentsRequired(room, seg, opts);
+    const segments = new Array(numberOfSegments).fill(seg);
+    if (opts.additionalSegment) {
+        segments.push(opts.additionalSegment);
+    }
+    const sortOrder = opts.sortOrder || { [TOUGH]: 1, other: 3, [HEAL]: 4, [MOVE]: opts.moveShield ? 2 : 5 };
+    return _.sortBy(_.flatten(segments), (part) => sortOrder[part] || sortOrder.other || 99);
+}
+exports.generateBody = generateBody;
+function segmentsRequired(room, segment, opts) {
+    return Math.min(maxSegmentsByCost(room, segment, opts), maxSegmentsBySize(segment, opts));
+}
+function maxSegmentsByCost(room, segment, opts) {
+    let maxCost = opts.maxCost && opts.maxCost <= room.energyCapacityAvailable ?
+        opts.maxCost : room.energyCapacityAvailable;
+    maxCost = opts.additionalSegment ? maxCost - _.sum(opts.additionalSegment, getPartCost) : maxCost;
+    return Math.floor(maxCost / _.sum(segment, getPartCost));
+}
+function maxSegmentsBySize(segment, opts) {
+    let maxSize = opts.maxSize && opts.maxSize <= MAX_CREEP_SIZE ? opts.maxSize : MAX_CREEP_SIZE;
+    maxSize = opts.additionalSegment ? maxSize - opts.additionalSegment.length : maxSize;
+    return Math.floor((maxSize && maxSize <= 50 ? maxSize : MAX_CREEP_SIZE) / segment.length);
+}
+function getPartCost(type) {
+    return BODYPART_COST[type];
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 function setTimerCycle(id, cycleModifier = 1) {
-    Memory.__spawn[id] = Memory.__spawn[id] || {};
+    Memory.__spawn[id] = Memory.__spawn[id] || { lastSpawn: 0 };
     const ticksTillNextSpawn = Math.floor(CREEP_LIFE_TIME / cycleModifier);
     Memory.__spawn[id].timer = Game.time + ticksTillNextSpawn;
 }
 exports.setTimerCycle = setTimerCycle;
 function setTimer(id, ticks) {
-    Memory.__spawn[id] = Memory.__spawn[id] || {};
+    Memory.__spawn[id] = Memory.__spawn[id] || { lastSpawn: 0 };
     Memory.__spawn[id].timer = Game.time + ticks;
 }
 exports.setTimer = setTimer;

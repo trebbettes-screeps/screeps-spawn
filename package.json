@@ -1,11 +1,16 @@
 {
   "name": "screeps-spawn",
-  "version": "1.0.76",
-  "description": "",
+  "version": "1.0.793",
+  "description": "A simple screep spawn manager",
   "main": "./dist/spawn.js",
-  "types": "./typings/spawn.d.ts",
+  "homepage": "https://github.com/trebbettes-screeps/screeps-spawn",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trebbettes-screeps/screeps-spawn.git"
+  },
+  "types": "./src/spawn.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "typedoc --out dist/docs/ src/ --mode file --includeDeclarations --excludeExternals --externalPattern **/src/typings/screeps** --excludeNotExported"
   },
   "author": "trebbettes",
   "license": "ISC",
@@ -14,10 +19,9 @@
     "@types/node": "^8.0.51",
     "ts-loader": "^3.1.1",
     "tslint": "^5.8.0",
+    "typedoc": "^0.9.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1"
   },
-  "dependencies": {
-    "console-browserify": "^1.1.0"
-  }
+  "dependencies": {}
 }

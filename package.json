@@ -1,6 +1,6 @@
 {
   "name": "screeps-spawn",
-  "version": "1.0.794",
+  "version": "1.0.797",
   "description": "A simple screep spawn manager",
   "main": "./dist/spawn.js",
   "homepage": "https://github.com/trebbettes-screeps/screeps-spawn",

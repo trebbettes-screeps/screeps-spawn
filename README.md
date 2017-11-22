@@ -63,7 +63,7 @@ function scoutFromRoom(room) {
   const taskId = `${room.name}_scout`; // Unique ID.
  
   $.registerSpawnRequest(taskId, room, {
-    shouldSpawn: $.spawnTimerCheck,
+    shouldSpawn: () => $.spawnTimerCheck(taskId),
     canSpawn: () => room.energyAvailable > 50,
     generateSpawnRequest: () => ({
       body: $.generateBody(room, [MOVE], {maxSize: 1}),
@@ -89,7 +89,7 @@ function supplyBuilders(room) {
     const taskId = `${room.name}_builders`; // Unique ID.
  
     $.registerSpawnRequest(taskId, room, {
-        shouldSpawn: () => $.getCreepCount(taskId) < 3,
+        shouldSpawn: () => $.spawnTimerCheck(taskId),
         canSpawn: () => room.energyAvailable >= 2000 || room.energyAvailable === room.energyCapacityAvailable,
         generateSpawnRequest: () => ({
             body: $.generateBody(room, [MOVE, WORK, CARRY], {maxCost: Math.min(room.energyAvailable, 2000)}),
@@ -109,7 +109,7 @@ function build(creep) {...}
 
 ```typescript
 $.registerSpawnRequest(taskId, room, {
-    shouldSpawn: () => $.spawnTimerCheck, 
+    shouldSpawn: () => $.spawnTimerCheck(taskId), 
     canSpawn: () => room.energyAvailable === room.energyCapacityAvailable,
     generateSpawnRequest: () => ({
         body: $.generateBody(room, [MOVE, WORK, CARRY]), 
@@ -139,7 +139,7 @@ function sendHaulers(room, source) {
     const taskId = `hauler_${room.name}_${source.id}`;
     
     $.registerSpawnRequest(taskId, room, {
-        shouldSpawn: () => $.spawnTimerCheck,
+        shouldSpawn: () => $.spawnTimerCheck(taskId),
         canSpawn: () => room.energyCapacityAvailable === room.energyAvailable,
         generateSpawnRequest: () => {
             const analysis = haulerAnalysis(room, source);

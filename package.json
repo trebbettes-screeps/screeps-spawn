@@ -10,7 +10,7 @@
   },
   "types": "./src/spawn.d.ts",
   "scripts": {
-    "docs": "typedoc --out dist/docs/ src/ --mode file --includeDeclarations --excludeExternals --externalPattern **/src/typings/screeps** --excludeNotExported"
+    "docs": "typedoc --out docs/ src/ --mode file --includeDeclarations --excludeExternals --externalPattern **/src/typings/screeps** --excludeNotExported"
   },
   "author": "trebbettes",
   "license": "ISC",

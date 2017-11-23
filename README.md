@@ -32,7 +32,6 @@ Install via NPM in your local dev environment `npm install screeps-spawn`.
 Or if you are using the screeps client then create a new module called 'screeps-spawn' and 
 copy the contents of [this](https://github.com/trebbettes-screeps/screeps-spawn/blob/master/dist/spawn.js) file into it.
 
-## Usage
 Import the module whenever you need to use it.
 
 JavaScript: 
@@ -69,7 +68,7 @@ module.exports = {
 
 
 
-##### Examples:
+## Usage & Examples:
 > Spawn 1 scout every 1500 ticks.
 
 ```typescript

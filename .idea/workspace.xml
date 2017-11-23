@@ -19,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -34,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/src/spawnManagers.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2805">
-              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+              <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,27 +54,29 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="247">
-                <caret line="163" column="4" lean-forward="true" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
+              <first_editor relative-caret-position="339">
+                <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
                 <folding>
-                  <marker date="1511390789234" expanded="true" signature="2047:2468" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="2047:2498" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="2143:2392" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511390789234" expanded="true" signature="2275:2386" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-                  <marker date="1511390789234" expanded="true" signature="2636:3209" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="2739:3129" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="2943:3121" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="3128:3129" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-                  <marker date="1511390789234" expanded="true" signature="3329:3611" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="3490:3607" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="3717:3949" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="3880:3945" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="4082:4736" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="4185:4651" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="4356:4645" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="4436:4635" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="4777:5405" ph="{...}" />
-                  <marker date="1511390789234" expanded="true" signature="5242:5402" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="1928:2086" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="1952:2084" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="2227:2648" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="2227:2678" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="2323:2572" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511407240763" expanded="true" signature="2455:2566" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+                  <marker date="1511407240763" expanded="true" signature="2816:3389" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="2919:3309" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="3123:3301" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="3308:3309" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+                  <marker date="1511407240763" expanded="true" signature="3509:3791" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="3670:3787" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="3897:4129" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4060:4125" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4262:4916" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4365:4831" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4536:4825" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4616:4815" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="4957:5585" ph="{...}" />
+                  <marker date="1511407240763" expanded="true" signature="5422:5582" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -105,7 +107,7 @@
       <file leaf-file-name="module.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/typings/module.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="420">
               <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
               <folding />
             </state>
@@ -116,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/src/spawnTimers.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -177,9 +179,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -196,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,7 +227,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -237,7 +240,6 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
@@ -269,33 +271,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511367228413</updated>
-      <workItem from="1511367230088" duration="9350000" />
+      <workItem from="1511367230088" duration="9483000" />
+      <workItem from="1511399011625" duration="1207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9350000" />
+    <option name="totallyTimeSpent" value="10690000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1389" height="878" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34738186" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -310,18 +313,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/docs/index.html">
+    <entry file="file://$PROJECT_DIR$/src/spawnManagers.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2805">
+          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generateBody.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -334,9 +345,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2445">
+            <caret line="163" column="4" lean-forward="true" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
+            <folding>
+              <marker date="1511407240763" expanded="true" signature="1928:2086" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="1952:2084" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2227:2648" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2227:2678" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2323:2572" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511407240763" expanded="true" signature="2455:2566" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+              <marker date="1511407240763" expanded="true" signature="2816:3389" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2919:3309" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3123:3301" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3308:3309" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511407240763" expanded="true" signature="3509:3791" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3670:3787" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3897:4129" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4060:4125" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4262:4916" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4365:4831" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4536:4825" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4616:4815" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4957:5585" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="5422:5582" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/init.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/typings/module.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/spawnTimers.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/spawn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3000">
+          <caret line="200" column="32" lean-forward="false" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/docs/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typings/module.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
           <folding />
         </state>
@@ -361,7 +452,7 @@
     <entry file="file://$PROJECT_DIR$/src/spawnTimers.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -369,7 +460,7 @@
     <entry file="file://$PROJECT_DIR$/src/spawnManagers.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2805">
-          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -385,27 +476,29 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="247">
-            <caret line="163" column="4" lean-forward="true" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
+          <first_editor relative-caret-position="339">
+            <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
             <folding>
-              <marker date="1511390789234" expanded="true" signature="2047:2468" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="2047:2498" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="2143:2392" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511390789234" expanded="true" signature="2275:2386" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
-              <marker date="1511390789234" expanded="true" signature="2636:3209" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="2739:3129" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="2943:3121" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="3128:3129" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
-              <marker date="1511390789234" expanded="true" signature="3329:3611" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="3490:3607" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="3717:3949" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="3880:3945" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="4082:4736" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="4185:4651" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="4356:4645" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="4436:4635" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="4777:5405" ph="{...}" />
-              <marker date="1511390789234" expanded="true" signature="5242:5402" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="1928:2086" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="1952:2084" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2227:2648" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2227:2678" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2323:2572" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511407240763" expanded="true" signature="2455:2566" ph="{&quot;onSuccess&quot;: $.setTimerCycle...}" />
+              <marker date="1511407240763" expanded="true" signature="2816:3389" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="2919:3309" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3123:3301" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3308:3309" ph="{&quot;shouldSpawn&quot;: $.spawnTimerCheck...}" />
+              <marker date="1511407240763" expanded="true" signature="3509:3791" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3670:3787" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="3897:4129" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4060:4125" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4262:4916" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4365:4831" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4536:4825" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4616:4815" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="4957:5585" ph="{...}" />
+              <marker date="1511407240763" expanded="true" signature="5422:5582" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />

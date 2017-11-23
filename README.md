@@ -47,9 +47,25 @@ TypeScript:
 import * as $ from "screeps-spawn";
 ``` 
 
-> You can rename the module to anything you like if you dont want to use `$`;
+You can rename the module to anything you like if you dont want to use `$`;
 
-> At the bottom of your main loop you will need to call `$.processSpawnRequests()`. It is **important** that this is called after all your spawn requests have been generated.
+#### Important!
+
+You must call `processSpawnRequests()` somewhere in your code *after* having generated your spawnRequests.
+```typescript
+const $ = require("screeps-spawn");
+ 
+module.exports = {
+    loop: function () {
+       // run all your code.
+       superAi();
+       
+       // then process the requests.
+       $.processSpawnRequests();
+    }
+}
+```
+
 
 
 

@@ -89,10 +89,21 @@
 				<pre><code>const $ = <span class="hljs-keyword">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
 </code></pre><p>TypeScript: </p>
 				<pre><code><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">"screeps-spawn"</span>;
-</code></pre><blockquote>
-					<p>You can rename the module to anything you like if you dont want to use <code>$</code>;</p>
-					<p>At the bottom of your main loop you will need to call <code>$.processSpawnRequests()</code>. It is <strong>important</strong> that this is called after all your spawn requests have been generated.</p>
-				</blockquote>
+</code></pre><p>You can rename the module to anything you like if you dont want to use <code>$</code>;</p>
+				<h4 id="important-">Important!</h4>
+				<p>You must call <code>processSpawnRequests()</code> somewhere in your code <em>after</em> having generated your spawnRequests.</p>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">const</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">"screeps-spawn"</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+    loop: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+       <span class="hljs-comment">// run all your code.</span>
+       superAi();
+
+       <span class="hljs-comment">// then process the requests.</span>
+       $.processSpawnRequests();
+    }
+}
+</code></pre>
 				<h5 id="examples-">Examples:</h5>
 				<blockquote>
 					<p>Spawn 1 scout every 1500 ticks.</p>

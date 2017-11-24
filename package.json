@@ -1,6 +1,6 @@
 {
   "name": "screeps-spawn",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple screep spawn manager",
   "main": "./dist/spawn.js",
   "homepage": "https://github.com/trebbettes-screeps/screeps-spawn",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/trebbettes-screeps/screeps-spawn.git"
   },
-  "types": "./src/spawn.d.ts",
+  "types": "./src/typings/module.d.ts",
   "scripts": {
     "docs": "typedoc --out docs/ src/ --mode file --includeDeclarations --excludeExternals --externalPattern **/src/typings/screeps** --excludeNotExported"
   },
